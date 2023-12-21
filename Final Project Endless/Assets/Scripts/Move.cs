@@ -22,15 +22,21 @@ public class Move : MonoBehaviour
     public float JumpDuration = 1f;
     public float Speed;
     
-    internal Transform tr;
+
     float yOriginal;
     float yOffset;
     float xRotation;
+    internal Transform tr;
+    internal Animator anim;
+
+
 
     
     private void Awake()
     {
+        
         tr = transform;
+        anim = GetComponentInChildren<Animator>();
         yOriginal = tr.position.y;
 
     }
@@ -59,6 +65,7 @@ public class Move : MonoBehaviour
     public IEnumerator fly()
     {
         Jumping = true;
+        anim.CrossFade("Jump", .1f);
         float d = 0;
         while (d < JumpDuration)
         {
@@ -66,8 +73,7 @@ public class Move : MonoBehaviour
             yOffset = jumpCurve.Evaluate(d / JumpDuration) * JumpScale;
             yield return null; //yield va delante de una funcion Ienumerator que devuelva null, relacionado a Coroutine, Sirve para decir que el frame acaba en esa iteracion del bucle.
         }
-
-
+        anim.CrossFade("Run", .1f);
         Jumping = false;
     }
 
@@ -76,20 +82,21 @@ public class Move : MonoBehaviour
     {
         Sliding = true;
         float d = 0;
+        anim.CrossFade("Slide", SlideUpDownDuration);
         while (d < SlideUpDownDuration)
         {
             d += Time.deltaTime;
-            xRotation = slideCurve.Evaluate(d / JumpDuration) * SlideScale;
+            xRotation = slideCurve.Evaluate(d / SlideUpDownDuration) * SlideScale;
             yield return null;
         }
         yield return new WaitForSeconds(SlideDuration);
+        anim.CrossFade("Run", SlideUpDownDuration);
         while (d > 0)
         {
             d -= Time.deltaTime;
-            xRotation = slideCurve.Evaluate(d / JumpDuration) * SlideScale;
+            xRotation = slideCurve.Evaluate(d / SlideUpDownDuration) * SlideScale;
             yield return null;
         }
-
         Sliding = false;
     }
 
