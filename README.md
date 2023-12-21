@@ -1,4 +1,4 @@
-# DJouven's Run
+# Djouven's Run
 Bienvenido a “Djouvens Run” un emocionante juego endless runner en el que los jugadores se embarcan en una emocionante travesía a través de caminos peligrosos llenos de desafíos y tesoros. 
 
 # Descripción del proyecto
