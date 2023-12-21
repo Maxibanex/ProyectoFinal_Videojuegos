@@ -11,6 +11,9 @@ public class Lose : MonoBehaviour
     public TextMeshProUGUI ButtonText;
     //public int TimesDead = 0;
 
+
+    public TMPro.TextMeshProUGUI scoreText;
+
     private void Awake()
     {
         Trap.OnTrap += Trap_OnTrap;
@@ -22,6 +25,7 @@ public class Lose : MonoBehaviour
     {
         //TimesDead++;
         //msg.text = $"Perdiste bro {TimesDead}";
+        scoreText.text = Scores.Instance.current.ToString();
         Scores.Instance.Save();
         LooseScreen.SetActive(true);
         texto.text ="Peldite";

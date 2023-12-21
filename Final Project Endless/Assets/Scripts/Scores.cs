@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 
@@ -13,9 +14,12 @@ public class Scores : MonoBehaviour
     public Score current;
     public ScoreList scoreList;
 
+    
+
     private void Awake()
     {
         Instance = this;
+        Load();
     }
 
     public void Save()
@@ -58,6 +62,11 @@ public class ScoreList
         if (scores.Count > 10)
             scores.RemoveAt(scores.Count - 1);
     }
+
+    public override string ToString()
+    {
+        return scores.Select(s => s.km > 0 ? s.ToString() : "").Aggregate((a, b) => $"{a}\n-------------------\n{b}");
+    }
 }
 
 
@@ -70,4 +79,9 @@ public class Score
 
 
     public float Compute() => Mathf.Clamp(km * (Gems / 10f + 1) - time, 0f, 9999999f);
+
+    public override string ToString()
+    {
+        return $"Seconds:{time.ToString("0.00")}\nKm: {(km / 10f).ToString("0.00")}\nGemas: {Gems.ToString("0")}";
+    }
 }
