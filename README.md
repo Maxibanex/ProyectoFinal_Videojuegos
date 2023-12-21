@@ -8,13 +8,13 @@ Sumérgete en “Djouvens Run” un juego endless runner en 3D desarrollado en U
 El objetivo general del juego es ofrecer una experiencia emocionante y reflexiva que sensibilice a los jugadores sobre la situación migratoria.
 
 # Controles
-Flechas derecha e izquierda  
+**Flechas derecha e izquierda**  
 Desplazamiento hacia ambos ejes mencionado
 
-Flecha hacia abajo  
+**Flecha hacia abajo**  
 Deslizamiento
 
-Barra espaciadora  
+**Barra espaciadora**  
 Al presionarla Saltaras
 
 # Herramientas de desarrollo
