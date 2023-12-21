@@ -10,9 +10,9 @@ public class Trap : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Player")
+        if(other.gameObject.tag=="Player")
         {
-            Debug.Log("Mueito");
+            OnTrap?.Invoke(trapType);
         }
     }
     private void OnDestroy()

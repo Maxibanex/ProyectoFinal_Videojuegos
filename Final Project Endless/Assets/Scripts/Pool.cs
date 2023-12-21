@@ -19,18 +19,19 @@ public class Pool : MonoBehaviour
 
 
     }
-    public Transform GetRandom() {
+    public Transform GetRandom() 
+    {
         var actived=instanced.Where(t => !t.gameObject.activeSelf).ToArray();
         return actived[Random.Range(0, actived.Length)];
 
     }
+    
 }
 
 [System.Serializable]
 public class PoolItem {
     public Transform Prefab;
     public int Quantity;
-    
     
     public Transform [] Instantiate(Transform parent) {
         Transform[] transforms= new Transform[Quantity];
