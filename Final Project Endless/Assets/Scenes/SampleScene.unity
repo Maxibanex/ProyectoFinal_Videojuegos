@@ -158,8 +158,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxLeft: -3.5
   MaxRight: 3.5
-  MaxBack: 0
-  MaxFor: 0
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.50202096
+      value: 0.7902022
+      inSlope: 0.00038944493
+      outSlope: 0.00038944493
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4943675
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0000123
+      value: -0.0047161896
+      inSlope: -2.5207474
+      outSlope: -2.5207474
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.104275666
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  JumpScale: 5
+  JumpDuration: 1
   Speed: 4
 --- !u!136 &178977999
 CapsuleCollider:
@@ -771,13 +804,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.08125846, y: -0, z: -0, w: 0.9966931}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.322, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 1157461526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: -5.8}
+  m_LocalPosition: {x: 0, y: 2.52, z: -7.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
