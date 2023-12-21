@@ -49,11 +49,11 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Horizontal += Input.GetAxis("Horizontal")*Speed*Time.deltaTime;
-        if (!Jumping && !Sliding && Input.GetButtonDown("Jump"))
+        Horizontal += SimpleInput.GetAxis("Horizontal")*Speed*Time.deltaTime;
+        if (!Jumping && !Sliding && SimpleInput.GetButtonDown("Jump"))
             StartCoroutine(fly());
 
-        if (!Jumping && !Sliding && Input.GetKeyDown(KeyCode.DownArrow))
+        if (!Jumping && !Sliding && SimpleInput.GetKeyDown(KeyCode.DownArrow))
             StartCoroutine(slide());
 
         Horizontal =Mathf.Clamp(Horizontal, MaxLeft, MaxRight);
