@@ -179,8 +179,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SlideUpDownDuration: 2
-  SlideDuration: 0.1
+  SlideUpDownDuration: 0.2
+  SlideDuration: 2
   SlideScale: -90
   jumpCurve:
     serializedVersion: 2
@@ -862,6 +862,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ae9f0a5ca71ce4a4c8ca1eaf63d90a1f, type: 3}
       propertyPath: m_Name
       value: Ch06_nonPBR@Running Slide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ae9f0a5ca71ce4a4c8ca1eaf63d90a1f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eb79e3fd0dd669f40a90a984b92a0ccf, type: 2}
+    - target: {fileID: 5866666021909216657, guid: ae9f0a5ca71ce4a4c8ca1eaf63d90a1f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
