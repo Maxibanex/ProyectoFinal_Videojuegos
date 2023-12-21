@@ -7,8 +7,16 @@ public class Move : MonoBehaviour
     float Horizontal;
     public float MaxLeft,MaxRight;
     //public float MaxBack,MaxFor;
-    public AnimationCurve jumpCurve;
+    public Transform Pivot;
+    
+    public AnimationCurve slideCurve;
+    private bool Sliding = false;
+    public float SlideUpDownDuration = 1f;
+    public float SlideDuration = 1f;
+    public float SlideScale = -90f;
 
+
+    public AnimationCurve jumpCurve;
     private bool Jumping = false;
     public float JumpScale = 5f;
     public float JumpDuration = 1f;
@@ -17,6 +25,8 @@ public class Move : MonoBehaviour
     internal Transform tr;
     float yOriginal;
     float yOffset;
+    float xRotation;
+
     
     private void Awake()
     {
@@ -34,11 +44,15 @@ public class Move : MonoBehaviour
     void Update()
     {
         Horizontal += Input.GetAxis("Horizontal")*Speed*Time.deltaTime;
-        if (!Jumping && Input.GetButtonDown("Jump"))
+        if (!Jumping && !Sliding && Input.GetButtonDown("Jump"))
             StartCoroutine(fly());
 
-        Horizontal=Mathf.Clamp(Horizontal, MaxLeft, MaxRight);
+        if (!Jumping && !Sliding && Input.GetKeyDown(KeyCode.DownArrow))
+            StartCoroutine(slide());
+
+        Horizontal =Mathf.Clamp(Horizontal, MaxLeft, MaxRight);
         tr.position=new Vector3(Horizontal, yOriginal + yOffset, 0);
+        Pivot.rotation = Quaternion.Euler(xRotation, 0, 0);
     }
 
 
@@ -55,6 +69,28 @@ public class Move : MonoBehaviour
 
 
         Jumping = false;
+    }
+
+
+    public IEnumerator slide()
+    {
+        Sliding = true;
+        float d = 0;
+        while (d < SlideUpDownDuration)
+        {
+            d += Time.deltaTime;
+            xRotation = slideCurve.Evaluate(d / JumpDuration) * SlideScale;
+            yield return null;
+        }
+        yield return new WaitForSeconds(SlideDuration);
+        while (d > 0)
+        {
+            d -= Time.deltaTime;
+            xRotation = slideCurve.Evaluate(d / JumpDuration) * SlideScale;
+            yield return null;
+        }
+
+        Sliding = false;
     }
 
 }
