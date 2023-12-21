@@ -9,10 +9,13 @@ El objetivo general del juego es ofrecer una experiencia emocionante y reflexiva
 
 # Controles
 Flechas derecha e izquierda
-Desplazamiento hacia ambos ejes mencionado
+\nDesplazamiento hacia ambos ejes mencionado
 
 Flecha hacia abajo
-Deslizamiento
+\nDeslizamiento
 
 Barra espaciadora
-al presionarla Saltaras
+\nAl presionarla Saltaras
+
+# Herramientas de desarrollo
+Unity || Visual Studio || GitHub
