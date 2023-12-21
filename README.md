@@ -19,3 +19,12 @@ Al presionarla Saltaras
 
 # Herramientas de desarrollo
 Unity || Visual Studio || GitHub
+
+
+# Assets que debes importar
+
+**Basic Motions FREE**  
+https://assetstore.unity.com/packages/3d/animations/basic-motions-free-154271  
+
+**Simple Input System**  
+https://assetstore.unity.com/packages/tools/input-management/simple-input-system-113033  
