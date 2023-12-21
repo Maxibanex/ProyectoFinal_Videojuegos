@@ -82,6 +82,8 @@ public class Generator : MonoBehaviour
         elementTransform.position = last.position - direction * Displace;
         elementTransform.gameObject.SetActive(true);
         elements.Enqueue(elementTransform);
+
+        Scores.Instance.current.km++;
         moved++;
     }
 }

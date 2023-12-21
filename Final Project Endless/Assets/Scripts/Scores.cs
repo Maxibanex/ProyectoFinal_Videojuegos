@@ -22,6 +22,7 @@ public class Scores : MonoBehaviour
     {
         scoreList.Add(current);
         File.WriteAllBytes(PATH, Encoding.UTF8.GetBytes(JsonUtility.ToJson(scoreList, false)));
+        current = new Score();
     }
 
     public void Load()
@@ -54,6 +55,8 @@ public class ScoreList
     {
         scores.Add(score);
         scores.Sort(comparisor);
+        if (scores.Count > 10)
+            scores.RemoveAt(scores.Count - 1);
     }
 }
 

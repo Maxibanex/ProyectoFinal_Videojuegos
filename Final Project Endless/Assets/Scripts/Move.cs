@@ -40,6 +40,12 @@ public class Move : MonoBehaviour
         yOriginal = tr.position.y;
 
     }
+
+    private void OnEnable()
+    {
+        Scores.Instance.current.time = 0f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +65,8 @@ public class Move : MonoBehaviour
         Horizontal =Mathf.Clamp(Horizontal, MaxLeft, MaxRight);
         tr.position=new Vector3(Horizontal, yOriginal + yOffset, 0);
         Pivot.rotation = Quaternion.Euler(xRotation, 0, 0);
+
+        Scores.Instance.current.time += Time.deltaTime;
     }
 
 

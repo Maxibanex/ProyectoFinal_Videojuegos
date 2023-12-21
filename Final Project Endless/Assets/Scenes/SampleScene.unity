@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &178977998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ PrefabInstance:
       addedObject: {fileID: 1215568330}
     - targetCorrespondingSourceObject: {fileID: 1039896609582742, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1907683583}
+      addedObject: {fileID: 1907683582}
   m_SourcePrefab: {fileID: 100100000, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
 --- !u!224 &1254779018 stripped
 RectTransform:
@@ -1813,6 +1813,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 178977998}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1531581509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,7 +1936,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1039896609582742, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
   m_PrefabInstance: {fileID: 1254779017}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1907683583
+--- !u!114 &1907683582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1933,12 +1945,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907683577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56571356d33665b4d8bbc4977d8a54b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 995f34434fbe45d46aacf4e120446279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 274
   button:
-    m_key: DownArrow
+    m_key: Down Arrow
     value: 0
 --- !u!1 &2049450050 stripped
 GameObject:

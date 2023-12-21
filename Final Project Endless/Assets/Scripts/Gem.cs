@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            Scores.Instance.current.Gems++;
+            gameObject.SetActive(false);
+        }
     }
 }

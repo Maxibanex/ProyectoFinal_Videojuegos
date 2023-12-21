@@ -22,6 +22,7 @@ public class Lose : MonoBehaviour
     {
         //TimesDead++;
         //msg.text = $"Perdiste bro {TimesDead}";
+        Scores.Instance.Save();
         LooseScreen.SetActive(true);
         texto.text ="Peldite";
         ButtonText.text = "Reiniciar";
